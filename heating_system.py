@@ -27,7 +27,7 @@ col_logo, col_title = st.columns([1, 4])
 
 with col_logo:
     logo = Image.open("logo.png")
-    st.image(logo, width=100)
+    st.image(logo, width=200)
 
 with col_title:
     st.title("📊 Dimensionnement du boiler – méthode fodass")
