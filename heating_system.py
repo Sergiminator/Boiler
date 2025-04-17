@@ -23,7 +23,7 @@ cp = 4.187  # kJ/kg°C
 # Interface Streamlit
 # -----------------------
 
-col_logo, col_title = st.columns([1, 2])
+col_logo, col_title = st.columns([1, 3])
 
 with col_logo:
     logo = Image.open("logo.png")
