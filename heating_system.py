@@ -44,9 +44,9 @@ st.header("♨️ Paramètres de chauffe")
 
 col1, col2 = st.columns(2)
 with col1:
-    t_min = st.number_input("Température de l’eau froide (°C)", min_value=0, max_value=50, value=10)
+    t_min = st.number_input("Température de l’eau froide (°C)", min_value=0, max_value=50, value=40)
 with col2:
-    t_max = st.number_input("Température de l’eau chaude souhaitée (°C)", min_value=40, max_value=80, value=60)
+    t_max = st.number_input("Température de l’eau chaude souhaitée (°C)", min_value=50, max_value=65, value=60)
 
 delta_t = t_max - t_min
 st.markdown(f"🔺 **Élévation de température (ΔT)** : `{delta_t} °C`")
