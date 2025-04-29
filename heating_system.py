@@ -213,13 +213,6 @@ with col_total:
 st.markdown("---")
 
 
-# Calcul dynamique pour la puissance du groupe
-Qw_gen = Qw_gen_out/temps_chauffe
-st.markdown(
-    f"🔺 **$(Q_{{w,gen}})$Puissance du groupe ECS :** `{Qw_gen:.2f} kWh`"
-)  
-
-
 
 # Calcul dynamique des besoins en chaleur réel
 Qw = volume_reel * 0.00116 * (t_max - t_min)
@@ -229,6 +222,11 @@ st.markdown(
 )   
 
 
+# Calcul dynamique pour la puissance du groupe
+Qw_gen = Qw_gen_out/temps_chauffe
+st.markdown(
+    f"🔺 **$(Q_{{w,gen}})$Puissance du groupe ECS :** `{Qw_gen:.2f} kWh`"
+)  
 
 
 st.markdown("---")
