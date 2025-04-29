@@ -223,10 +223,10 @@ st.markdown(
 
 
 # Calcul dynamique pour la puissance du groupe
-Qw_gen = Qw_gen_out/temps_chauffe
+Qw_gen = Qw_gen_out/(temps_chauffe*60)
 st.markdown(
     f"🔺 **$(Q_{{w,gen}})$Puissance du groupe ECS :** `{Qw_gen:.2f} kWh`"
-)  
+)
 
 
 st.markdown("---")
