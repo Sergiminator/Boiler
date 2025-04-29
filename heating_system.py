@@ -122,7 +122,7 @@ st.image(image_paths[option], caption=f"Configuration sélectionnée : {option}"
 
 facteur = facteurs[option]
 # Calcul dynamique du volume initiale du chauffeau
-volume_initiale = (volume_commande + volume_couverture * facteur)
+volume_initiale = (volume_commande + volume_couverture) * facteur
 st.markdown(f"💧 (Vw,sto,1)**Volume de initiale du chauffeau* : {volume_initiale:.2f} l ")
 st.markdown("---")
 
