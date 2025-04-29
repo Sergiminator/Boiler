@@ -115,7 +115,7 @@ image_paths = {
 facteurs = {
     "Type a": 1.25,
     "Type b": 1.1,
-    "Type c": 1.1
+    "Type c": 1
 }
 
 st.image(image_paths[option], caption=f"Configuration sélectionnée : {option}", width=240)
