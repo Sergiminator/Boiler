@@ -176,7 +176,7 @@ else:
     st.markdown(
         f"🔹 **$(Q_{{w,sto,is}})$ Pertes de stockage** : `{Qw_sto_is:.2f} kWh/jour`"
     )
-
+    
 
 # Affichage du module de sélection des tubes à droite
 col_gauche, col_droite = st.columns([2, 1])
