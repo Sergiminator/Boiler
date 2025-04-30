@@ -166,11 +166,16 @@ if c2 > 2:
 else:
     pertes_raccordement = 0.0
 
+if volume_reel <= 2000:
 Qw_sto_is = perte_limite + pertes_raccordement
 st.markdown(
     f"🔹 **$(Q_{{w,sto,is}})$ Pertes de stockage** : `{Qw_sto_is:.2f} kWh/jour`"
 )
-
+else:
+Qw_sto_is = 0.11 * math.sqrt(volume_reel) + 0.1 * (c2 - 2)
+st.markdown(
+    f"🔹 **$(Q_{{w,sto,is}})$ Pertes de stockage** : `{Qw_sto_is:.2f} kWh/jour`"
+)
 
 
 # Affichage du module de sélection des tubes à droite
