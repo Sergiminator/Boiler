@@ -261,8 +261,8 @@ if calculer:
     st.markdown("### ✅ Résultats")
     st.success(f"👥 **Nombre total de personnes :** `{total_personnes_npi:.1f}`")
     st.info(f"💧 **Volume du accumulateur :** `{volume_reel:.1f} L`")
-    st.info(f"💧 **Cycles :** `{cycles:.1f} Cycles par jour`")
-    st.warning(f"⚡ **Puissance thermique nécessaire :** `{Qw_gen_out:.2f} kW`")
+    st.info(f"🕐 **Cycles :** `{cycles:.1f} Cycles par jour pour {temps_chauffe:.1f} heures par cycle`")
+    st.warning(f"🔥 **Puissance thermique nécessaire :** `{Qw_gen_out:.2f} kW`")
 
     # Stockage des résultats pour l'export PDF
     st.session_state["resultat_html"] = f"""
