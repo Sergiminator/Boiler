@@ -86,7 +86,7 @@ col3, col4 = st.columns(2)
 with col3:
     cycles = st.number_input("Nombre de cycles par jour", min_value=1, value=2)
 with col4:
-    temps_chauffe = st.number_input("Temps de chauffe par cycle (en heures)", min_value=0.5, value=1)
+    temps_chauffe = st.number_input("Temps de chauffe par cycle (en heures)", min_value=1, value=3)
 
 
 # Calcul dynamique du volume d'eau chaude produite
