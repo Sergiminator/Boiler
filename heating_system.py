@@ -86,7 +86,7 @@ col3, col4 = st.columns(2)
 with col3:
     cycles = st.number_input("Nombre de cycles par jour", min_value=1, value=2)
 with col4:
-    temps_chauffe = st.number_input("Temps de chauffe par cycle (en minutes)", min_value=10, value=60)
+    temps_chauffe = st.number_input("Temps de chauffe par cycle (en heures)", min_value=0.5, value=1)
 
 
 # Calcul dynamique du volume d'eau chaude produite
@@ -214,16 +214,16 @@ st.markdown("---")
 
 
 
-# Calcul dynamique des besoins en chaleur réel
+# Calcul dynamique des besoins en chaleur réel pour chaque cycle
 Qw = volume_reel * 0.00116 * (t_max - t_min)
 Qw_gen_out = Qw + Qw_sto_is + Qw_hi_is
 st.markdown(
-    f"🔺 **$(Q_{{w,gen,out}})$Besoins de chaleur à fournir à chaque cycle de recharge :** `{Qw_gen_out:.2f} kWh`"
+    f"🔺 **$(Q_{{w,gen,out}})$Besoins de chaleur à fournir à chaque cycle de recharge :** `{Qw_gen_out:.2f} kW`"
 )   
 
 
 # Calcul dynamique pour la puissance du groupe
-Qw_gen = Qw_gen_out/(temps_chauffe)
+Qw_gen = Qw_gen_out/temps_chauffe
 st.markdown(
     f"🔺 **$(Q_{{w,gen}})$Puissance du groupe ECS :** `{Qw_gen:.2f} kWh`"
 )
@@ -254,9 +254,8 @@ if calculer:
         for typologie in typologie_occupants
     )
     volume_utile = total_personnes_npi * litres_par_personne_Vwui
-    temps_chauffe_sec = temps_chauffe * 60
     delta_t = t_max - t_min  # Calcul de l'écart de température
-    puissance_kw = (volume_utile * cp * delta_t) / (temps_chauffe_sec * cycles)
+    puissance_kw = (volume_utile * cp * delta_t) / (temps_chauffe * 3600 * cycles)
 
     # Affichage des résultats
     st.markdown("### ✅ Résultats")
