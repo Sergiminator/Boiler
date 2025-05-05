@@ -146,7 +146,7 @@ with col3:
 
 # Exemple de calcul dynamique
 total_personnes = sum(
-    st.session_state["appartements"][typologie]
+    st.session_state["appartements"][typologie] * typologie_occupants[typologie]
     for typologie in st.session_state["appartements"]
 )
 st.markdown(f"👥 Nombre total de personnes : `{total_personnes}`")
